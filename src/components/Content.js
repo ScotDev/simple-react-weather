@@ -9,7 +9,7 @@ class Content extends Component {
         let lon = '-3.15';
         const secret = process.env.REACT_APP_SECRET
 
-        axios.get(`http://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${secret}&units=metric`).then(res => {
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${secret}&units=metric`).then(res => {
             console.log(res)
             this.setState({ location: res.data.name, temp: res.data.main.temp.toFixed(1), feelsLike: res.data.main.feels_like.toFixed(1), type: res.data.weather[0].main, icon: res.data.weather[0].icon, windSpeed: res.data.wind.speed, countryCode: res.data.sys.country, typeClassName: res.data.weather[0].main.toLowerCase() })
         })
