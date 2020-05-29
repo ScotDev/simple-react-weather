@@ -1,6 +1,6 @@
 {
-  "short_name": "Simple React Weather",
-  "name": "Simple React Weather",
+  "short_name": "theweather.xyz",
+  "name": "theweather.xyz",
   "icons": [
     {
       "src": "icon.ico",

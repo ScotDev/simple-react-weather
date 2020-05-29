@@ -5,20 +5,25 @@ class Content extends Component {
     state = { location: '', countryCode: '', temp: '', feelsLike: '', type: '', windSpeed: '', icon: '', typeClassName: '' }
 
     componentDidMount() {
-        let lat = '55.95';
-        let lon = '-3.15';
-        const secret = process.env.REACT_APP_SECRET
+        const secret = 'b67ac96df4ea94db13c759467a804770';
+        // const secret = process.env.REACT_APP_SECRET
 
-        axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${secret}&units=metric`).then(res => {
-            console.log(res)
-            this.setState({ location: res.data.name, temp: res.data.main.temp.toFixed(1), feelsLike: res.data.main.feels_like.toFixed(1), type: res.data.weather[0].main, icon: res.data.weather[0].icon, windSpeed: res.data.wind.speed, countryCode: res.data.sys.country, typeClassName: res.data.weather[0].main.toLowerCase() })
+        let searchLocation = 'Edinburgh'
+
+        axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${searchLocation}&appid=${secret}&units=metric`).then(res => {
+            console.log(res);
+            this.setState({ location: res.data.name, temp: res.data.main.temp.toFixed(1), feelsLike: res.data.main.feels_like.toFixed(1), type: res.data.weather[0].main, icon: res.data.weather[0].icon, windSpeed: res.data.wind.speed, countryCode: res.data.sys.country, typeClassName: res.data.weather[0].main.toLowerCase() });
         })
+            .catch(error => {
+                console.log(error)
+            });
 
-    }
+    };
 
     componentDidUpdate() {
-        document.getElementById('favicon').href = `http://openweathermap.org/img/wn/${this.state.icon}@2x.png`
-    }
+        document.getElementById('favicon').href = `https://openweathermap.org/img/wn/${this.state.icon}@2x.png`
+        document.title = `theweather.xyz | ${this.state.location}`
+    };
 
     render() {
         const { icon, location, countryCode, temp, feelsLike, type, windSpeed, typeClassName } = this.state;
