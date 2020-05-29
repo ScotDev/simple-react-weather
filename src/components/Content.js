@@ -5,8 +5,8 @@ class Content extends Component {
     state = { location: '', countryCode: '', temp: '', feelsLike: '', type: '', windSpeed: '', icon: '', typeClassName: '' }
 
     componentDidMount() {
-        const secret = 'b67ac96df4ea94db13c759467a804770';
-        // const secret = process.env.REACT_APP_SECRET
+
+        const secret = process.env.REACT_APP_SECRET
 
         let searchLocation = 'Edinburgh'
 
