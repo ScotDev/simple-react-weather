@@ -10,7 +10,6 @@ class App extends Component {
   state = { errorMsg: '', showClass: '', hideClass: 'hide', query: null, location: '', countryCode: '', temp: '', feelsLike: '', type: '', windSpeed: '', icon: '', typeClassName: '' };
 
   getData = () => axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.query}&appid=${secret}&units=metric`).then(res => {
-    console.log(res);
     this.setState({ hideClass: null, location: res.data.name, temp: res.data.main.temp.toFixed(1), feelsLike: res.data.main.feels_like.toFixed(1), type: res.data.weather[0].main, icon: res.data.weather[0].icon, windSpeed: res.data.wind.speed, countryCode: res.data.sys.country, typeClassName: res.data.weather[0].main.toLowerCase() });
   })
     .catch((error) => {
