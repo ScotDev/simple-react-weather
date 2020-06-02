@@ -4,8 +4,8 @@ import './App.css';
 import './styles.min.css'
 
 import Content from './components/Content';
-
-const secret = process.env.REACT_APP_SECRET;
+const secret = '2a6ae01e17df3c070d45fcd262b3d837';
+// const secret = process.env.REACT_APP_SECRET;
 
 class App extends Component {
   state = { errorMsg: '', showClass: '', hideClass: 'hide', query: null, location: '', countryCode: '', temp: '', feelsLike: '', type: '', windSpeed: '', icon: '', typeClassName: '' };
@@ -29,8 +29,8 @@ class App extends Component {
     e.preventDefault();
 
     if (this.state.query !== null) {
-      this.getData();
       this.setState({ showClass: null });
+      this.getData();
     } else {
       this.setState({ showClass: "show" });
       this.setState({ errorMsg: 'Please enter a location' })
