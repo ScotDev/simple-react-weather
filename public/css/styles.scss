@@ -3,12 +3,18 @@
 $white: #fff;
 $dark-grey: #677587;
 $light-grey: #c9c9c9;
+$box-custom-shadow: rgba(0, 0, 0, 0.7);
+$light-transparent-bg: rgba(transparent, 0.1);
 
 * {
   box-sizing: border-box;
   font-size: 16px;
   font-family: 'DM Sans', sans-serif;
   letter-spacing: 0.1rem;
+}
+
+body {
+  overflow: hidden;
 }
 
 h1,
@@ -23,8 +29,57 @@ h1 i {
   font-size: 1.8rem;
 }
 
+form {
+  margin-top: 1rem;
+  background-color: transparent;
+  display: flex;
+  flex-direction: column;
+  width: 15vw;
+}
+
+form input {
+  border-radius: 6px;
+  font-family: inherit;
+  font-weight: bold;
+  outline: 0;
+  border: 1px solid $white;
+  color: black;
+  background-color: $white;
+  margin-bottom: 0.5rem;
+  padding: 8px;
+}
+
+form input:focus {
+  background-color: $light-transparent-bg;
+  color: $white;
+}
+
+.button {
+  border-radius: 6px;
+  font-family: inherit;
+  font-weight: bold;
+  outline: 0;
+  border: 1px solid $white;
+  background-color: $dark-grey;
+  color: $white;
+  padding: 8px;
+  margin-bottom: 0.5rem;
+  -moz-box-shadow: 3px 3px 5px $box-custom-shadow;
+  -webkit-box-shadow: 3px 3px 5px $box-custom-shadow;
+  box-shadow: 3px 3px 5px $box-custom-shadow;
+}
+
+.button:hover {
+  background-color: $light-transparent-bg;
+  -moz-box-shadow: 5px 5px 8px $box-custom-shadow;
+  -webkit-box-shadow: 5px 5px 8px $box-custom-shadow;
+  box-shadow: 5px 5px 8px $box-custom-shadow;
+  cursor: pointer;
+}
+
 .container {
   min-height: 100vh;
+  min-width: 100vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -33,10 +88,23 @@ h1 i {
   color: $white;
 }
 
-span {
-  background-color: rgba($dark-grey, $alpha: 0.2);
+.default-bg {
+  background-image: url('https://source.unsplash.com/random/1920x1080?mountain');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.warning {
+  display: flex;
+  flex-direction: row;
+  margin: 0 0 0.5rem 0.5rem;
+  color: red;
+}
+
+.helper-bg {
+  background-color: $light-transparent-bg;
   color: $white;
-  // padding: 0.7rem;
   padding: 0.1rem 0.5rem;
   margin: 1rem;
   border-radius: 6px;
@@ -44,6 +112,8 @@ span {
 
 .credits {
   position: fixed;
+  display: flex;
+  flex-direction: column;
   bottom: 1.1rem;
 }
 
@@ -58,54 +128,75 @@ span {
 }
 
 .clear {
-  background-image: url('https://images.pexels.com/photos/1089168/pexels-photo-1089168.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1920&w=1080');
+  background-image: url('https://source.unsplash.com/random/1920x1080?sun');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .clouds {
-  background-image: url('https://images.pexels.com/photos/4275890/pexels-photo-4275890.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1920&w=1080');
+  background-image: url('https://source.unsplash.com/random/1920x1080?clouds');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  width: 100%;
+  height: 100vh;
 }
 
 .drizzle {
-  background-image: url('https://images.unsplash.com/photo-1544994108-7b68a790caba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1920&q=1080');
+  background-image: url('https://source.unsplash.com/random/1920x1080?drizzle');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 .rain {
-  background-image: url('https://images.pexels.com/photos/1463530/pexels-photo-1463530.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1920&w=1080');
+  background-image: url('https://source.unsplash.com/random/1920x1080?rain');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  width: 100%;
+  height: 100vh;
 }
 
 .thunderstorm {
-  background-image: url('https://images.pexels.com/photos/1162251/pexels-photo-1162251.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1920&w=1080');
+  background-image: url('https://source.unsplash.com/random/1920x1080?lightning');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .snow {
-  background-image: url('https://images.pexels.com/photos/3462588/pexels-photo-3462588.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1920&w=1080');
+  background-image: url('https://source.unsplash.com/random/1920x1080?snow');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
 .fog {
-  background-image: url('https://images.pexels.com/photos/163323/fog-dawn-landscape-morgenstimmung-163323.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=1920&w=1080');
+  background-image: url('https://source.unsplash.com/random/1920x1080?fog');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 }
 
+.hide {
+  display: none;
+}
+
+.show {
+  display: flex !important;
+}
+
+@media only screen and (max-width: 1250px) {
+  form {
+    width: 30vw;
+  }
+}
+
 @media only screen and (max-width: 600px) {
+  form {
+    width: 50vw;
+  }
   h1,
   h2,
   h3,
@@ -116,7 +207,7 @@ span {
   h1 i {
     font-size: 1rem;
   }
-  span {
+  .helper-bg {
     background-color: rgba($dark-grey, $alpha: 0.2);
     color: $white;
     padding: 0.1rem 0.5rem 0.1rem 0.5rem;
@@ -131,5 +222,18 @@ span {
 @media only screen and (max-height: 550px) {
   .credits {
     display: none;
+  }
+}
+
+@media only screen and (max-height: 500px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-size: 1rem;
+  }
+  h1 i {
+    font-size: 0.8rem;
   }
 }
