@@ -227,7 +227,7 @@ form input {
   }
 }
 
-@media only screen and (max-height: 500px) {
+@media only screen and (max-height: 570px) {
   h1,
   h2,
   h3,
@@ -238,13 +238,11 @@ form input {
   h1 i {
     font-size: 0.7rem;
   }
-  .button {
-    font-size: 0.9rem;
+  .helper-bg {
+    padding: 0.1rem 0.4rem 0.1rem 0.4rem;
   }
+  .button,
   form input {
     font-size: 0.9rem;
-  }
-  .credits {
-    display: none;
   }
 }
