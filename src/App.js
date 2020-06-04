@@ -18,14 +18,13 @@ class App extends Component {
       }
     });
 
-  showError = (error) => {
+  showError = () => {
     this.setState({ showClass: 'show' });
     this.setState({ errorMsg: 'Location not found' })
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-
     if (this.state.query !== null) {
       this.setState({ showClass: null });
       this.getData();
