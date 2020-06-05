@@ -34,9 +34,7 @@ class App extends Component {
     }
   };
 
-  handleInputChange = (e) => {
-    this.setState({ query: e.target.value })
-  };
+  handleInputChange = e => this.setState({ [e.target.name]: e.target.value });
 
   bgRandomiser = () => {
     const randomNumberTo7 = Math.floor(Math.random() * 7);
@@ -47,7 +45,8 @@ class App extends Component {
 
   componentDidMount() {
     this.bgRandomiser()
-  }
+  };
+
   componentDidUpdate() {
     document.title = `theweather.xyz | ${this.state.location}`
   };
@@ -59,7 +58,7 @@ class App extends Component {
       <div className="App">
         <div className={`container bg default-bg-${randomNumberTo7} weather-bg-${typeClassName}-${randomNumberTo2}`}>
           <form className={`${showClass}`} onSubmit={this.handleSubmit}>
-            <input type="text" placeholder="Enter a location" ref={input => this.search = input} onChange={this.handleInputChange}></input>
+            <input type="text" name="query" placeholder="Enter a location" value={this.state.value} onChange={this.handleInputChange}></input>
             <div id="warning" className={`warning hide ${showClass}`}>{errorMsg}</div>
             <button className="button">Search</button>
           </form>
