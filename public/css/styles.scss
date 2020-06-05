@@ -102,11 +102,37 @@ form input {
   color: $white;
 }
 
-.default-bg {
-  background-image: url('https://source.unsplash.com/random/1920x1080?mountain');
+.bg {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.default-bg-0 {
+  background-image: url('./img/default-bg/mountains_min_0.jpg');
+}
+.default-bg-1 {
+  background-image: url('./img/default-bg/mountains_min_1.jpg');
+}
+.default-bg-2 {
+  background-image: url('./img/default-bg/mountains_min_2.jpg');
+}
+.default-bg-3 {
+  background-image: url('./img/default-bg/mountains_min_3.jpg');
+}
+.default-bg-4 {
+  background-image: url('./img/default-bg/mountains_min_4.jpg');
+}
+.default-bg-5 {
+  background-image: url('./img/default-bg/mountains_min_5.jpg');
+}
+.default-bg-6 {
+  background-image: url('./img/default-bg/mountains_min_6.jpg');
+}
+.default-bg-7 {
+  background-image: url('./img/default-bg/mountains_min_7.jpg');
 }
 
 .warning {
@@ -143,83 +169,94 @@ form input {
   border-bottom: 1px $white solid;
 }
 
-.clear {
-  background-image: url('https://source.unsplash.com/random/1920x1080?sun');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100vh;
+.weather-bg-clear-0 {
+  background-image: url('./img/weather-bg/sun_min_0.jpg');
+}
+.weather-bg-clear-1 {
+  background-image: url('./img/weather-bg/sun_min_1.jpg');
+}
+.weather-bg-clear-2 {
+  background-image: url('./img/weather-bg/sun_min_2.jpg');
 }
 
-.clouds {
-  background-image: url('https://source.unsplash.com/random/1920x1080?clouds');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100vh;
+.weather-bg-clouds-0 {
+  background-image: url('./img/weather-bg/clouds_min_0.jpg');
+}
+.weather-bg-clouds-1 {
+  background-image: url('./img/weather-bg/clouds_min_1.jpg');
+}
+.weather-bg-clouds-2 {
+  background-image: url('./img/weather-bg/clouds_min_2.jpg');
 }
 
-.drizzle {
-  background-image: url('https://source.unsplash.com/random/1920x1080?drizzle');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100vh;
+.weather-bg-rain-0 {
+  background-image: url('./img/weather-bg/rain_min_0.jpg');
 }
-.rain {
-  background-image: url('https://source.unsplash.com/random/1920x1080?rain');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100vh;
+.weather-bg-rain-1 {
+  background-image: url('./img/weather-bg/rain_min_1.jpg');
+}
+.weather-bg-rain-2 {
+  background-image: url('./img/weather-bg/rain_min_2.jpg');
 }
 
-.thunderstorm {
-  background-image: url('https://source.unsplash.com/random/1920x1080?lightning');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100vh;
+.weather-bg-drizzle-0 {
+  background-image: url('./img/weather-bg/drizzle_min_0.jpg');
+}
+.weather-bg-drizzle-1 {
+  background-image: url('./img/weather-bg/drizzle_min_1.jpg');
+}
+.weather-bg-drizzle-2 {
+  background-image: url('./img/weather-bg/drizzle_min_2.jpg');
 }
 
-.snow {
-  background-image: url('https://source.unsplash.com/random/1920x1080?snow');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100vh;
+.weather-bg-thunderstorm-0 {
+  background-image: url('./img/weather-bg/thunderstorm_min_0.jpg');
+}
+.weather-bg-thunderstorm-1 {
+  background-image: url('./img/weather-bg/thunderstorm_min_1.jpg');
+}
+.weather-bg-thunderstorm-2 {
+  background-image: url('./img/weather-bg/thunderstorm_min_2.jpg');
 }
 
-.mist {
-  background-image: url('https://source.unsplash.com/random/1920x1080?mist');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100vh;
+.weather-bg-snow-0 {
+  background-image: url('./img/weather-bg/snow_min_0.jpg');
+}
+.weather-bg-snow-1 {
+  background-image: url('./img/weather-bg/snow_min_1.jpg');
+}
+.weather-bg-snow-2 {
+  background-image: url('./img/weather-bg/snow_min_2.jpg');
 }
 
-.fog {
-  background-image: url('https://source.unsplash.com/random/1920x1080?fog');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100vh;
+.weather-bg-mist-0 {
+  background-image: url('./img/weather-bg/mist_min_0.jpg');
 }
-.haze {
-  background-image: url('https://source.unsplash.com/random/1920x1080?haze');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100vh;
+.weather-bg-mist-1 {
+  background-image: url('./img/weather-bg/mist_min_1.jpg');
+}
+.weather-bg-mist-2 {
+  background-image: url('./img/weather-bg/mist_min_2.jpg');
+}
+
+.weather-bg-fog-0 {
+  background-image: url('./img/weather-bg/fog_min_0.jpg');
+}
+.weather-bg-fog-1 {
+  background-image: url('./img/weather-bg/fog_min_1.jpg');
+}
+.weather-bg-fog-2 {
+  background-image: url('./img/weather-bg/fog_min_2.jpg');
+}
+
+.weather-bg-haze-0 {
+  background-image: url('./img/weather-bg/haze_min_0.jpg');
+}
+.weather-bg-haze-1 {
+  background-image: url('./img/weather-bg/haze_min_1.jpg');
+}
+.weather-bg-haze-2 {
+  background-image: url('./img/weather-bg/haze_min_2.jpg');
 }
 
 .hide {
@@ -270,36 +307,6 @@ form input {
   }
   .credits a {
     font-size: 0.8rem;
-  }
-  .default-bg {
-    background-image: url('https://source.unsplash.com/random/400x700?mountain');
-  }
-  .clear {
-    background-image: url('https://source.unsplash.com/random/400x700?sun');
-  }
-  .clouds {
-    background-image: url('https://source.unsplash.com/random/400x700?clouds');
-  }
-  .drizzle {
-    background-image: url('https://source.unsplash.com/random/400x700?drizzle');
-  }
-  .rain {
-    background-image: url('https://source.unsplash.com/random/400x700?rain');
-  }
-  .thunderstorm {
-    background-image: url('https://source.unsplash.com/random/400x700?lightning');
-  }
-  .snow {
-    background-image: url('https://source.unsplash.com/random/400x700?snow');
-  }
-  .mist {
-    background-image: url('https://source.unsplash.com/random/400x700?mist');
-  }
-  .fog {
-    background-image: url('https://source.unsplash.com/random/400x700?fog');
-  }
-  .haze {
-    background-image: url('https://source.unsplash.com/random/400x700?haze');
   }
 }
 
