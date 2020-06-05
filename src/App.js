@@ -25,7 +25,7 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    if (this.state.query !== null) {
+    if (this.state.query !== null & !this.state.query.startsWith(' ')) {
       this.setState({ showClass: null });
       this.getData();
     } else {
