@@ -45,10 +45,10 @@ class Content extends Component {
         // Sets temperature icon class
         let tempAsNumber = parseInt(temp);
         let temp_class;
-        if (tempAsNumber > 20) {
+        if (tempAsNumber > 25) {
             temp_class = 'fire';
         }
-        else if (tempAsNumber < 20 & tempAsNumber > 10) {
+        else if (tempAsNumber < 25 & tempAsNumber > 15) {
             temp_class = 'blaze'
         } else {
             temp_class = 'temp-cold';
