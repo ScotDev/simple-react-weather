@@ -51,10 +51,7 @@ form {
   input:hover,
   input:focus {
     background-color: $light-transparent-bg;
-    // -moz-box-shadow: 5px 5px 8px $box-custom-shadow;
-    // -webkit-box-shadow: 5px 5px 8px $box-custom-shadow;
-    // box-shadow: 5px 5px 8px $box-custom-shadow;
-    transform: scale(1.01);
+    transform: scale(1.02);
   }
 }
 
@@ -102,7 +99,7 @@ form {
   -webkit-box-shadow: 5px 5px 8px $box-custom-shadow;
   box-shadow: 5px 5px 8px $box-custom-shadow;
   cursor: pointer;
-  transform: scale(1.01);
+  transform: scale(1.02);
 }
 
 .container {
@@ -165,7 +162,7 @@ form {
 .helper-bg:hover,
 .helper-bg:focus {
   background-color: $light-transparent-bg;
-  transform: scale(1.01);
+  transform: scale(1.02);
 }
 
 .credits {
