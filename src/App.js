@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './App.css';
 import './styles.min.css'
 
 import Content from './components/Content';
 const secret = process.env.REACT_APP_SECRET;
 
 class App extends Component {
-  state = { randomNumberTo2: '', randomNumberTo7: '', errorMsg: '', showClass: '', hideClass: 'hide', query: null, location: '', countryCode: '', temp: '', feelsLike: '', type: '', windSpeed: '', icon: '', typeClassName: '' };
+  state = { randomNumberTo2: '', randomNumberTo7: '', errorMsg: '', showClass: '', hideClass: 'hide', query: null, location: '', countryCode: '', temp: '', feelsLike: '', type: '', windSpeed: '', typeClassName: '' };
 
   getData = () => axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.query}&appid=${secret}&units=metric`).then(res => {
-    this.setState({ hideClass: null, location: res.data.name, temp: res.data.main.temp.toFixed(1), feelsLike: res.data.main.feels_like.toFixed(1), type: res.data.weather[0].main, icon: res.data.weather[0].icon, windSpeed: res.data.wind.speed.toFixed(1), countryCode: res.data.sys.country, typeClassName: res.data.weather[0].main.toLowerCase() });
+    this.setState({ hideClass: null, location: res.data.name, temp: res.data.main.temp.toFixed(1), feelsLike: res.data.main.feels_like.toFixed(1), type: res.data.weather[0].main, windSpeed: res.data.wind.speed.toFixed(1), countryCode: res.data.sys.country, typeClassName: res.data.weather[0].main.toLowerCase() });
   })
     .catch((error) => {
       if (error.response) {
@@ -25,12 +24,13 @@ class App extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    if (this.state.query !== null & !this.state.query.startsWith(' ')) {
-      this.setState({ showClass: null });
-      this.getData();
-    } else {
+    if (e.target.query.value.length < 1 | e.target.query.value.startsWith(' ')) {
       this.setState({ showClass: "show" });
       this.setState({ errorMsg: 'Please enter a location' })
+    } else {
+      this.setState({ showClass: null });
+      this.getData();
+      document.title = `theweather.xyz | ${this.state.query}`
     }
   };
 
@@ -45,10 +45,6 @@ class App extends Component {
 
   componentDidMount() {
     this.bgRandomiser()
-  };
-
-  componentDidUpdate() {
-    document.title = `theweather.xyz | ${this.state.location}`
   };
 
   render() {
@@ -66,7 +62,7 @@ class App extends Component {
             <Content weather={this.state}></Content>
           </div>
           <div className="credits"><a href="https://github.com/ScotDev" rel="noopener noreferrer" target="_blank"
-          >Created by ScotDev <i className="fab fa-github"></i></a></div>
+          >Created by ScotDev <i className="ri-github-fill"></i></a></div>
         </div>
       </div>
     );
