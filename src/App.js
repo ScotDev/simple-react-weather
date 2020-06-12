@@ -54,7 +54,7 @@ class App extends Component {
       <div className="App">
         <div className={`container bg default-bg-${randomNumberTo7} weather-bg-${typeClassName}-${randomNumberTo2}`}>
           <form className={`${showClass}`} onSubmit={this.handleSubmit}>
-            <input type="text" name="query" placeholder="Enter a location" value={this.state.value} onChange={this.handleInputChange}></input>
+            <input type="search" name="query" placeholder="Enter a location" value={this.state.value} onChange={this.handleInputChange}></input>
             <div id="warning" className={`warning hide ${showClass}`}>{errorMsg}</div>
             <button className="button">Search</button>
           </form>
