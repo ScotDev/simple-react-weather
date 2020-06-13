@@ -7,6 +7,7 @@
 }
 
 .default-bg-0 {
+  @extend .bg;
   background-image: url('./img/default-bg/mountains_min_0.jpg');
 }
 .default-bg-1 {

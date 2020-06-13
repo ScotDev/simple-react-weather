@@ -58,11 +58,11 @@ class Content extends Component {
 
         return (
             <div className="helper-bg" >
-                <h1>Current: {temp}°C <i className={`temp-icon ri-${temp_class}-line`}></i></h1>
-                <h2>Feels like: {feelsLike}°C <i className={`temp-icon ri-${temp_class}-line`}></i></h2>
+                <h1>{temp}°C <i className={`temp-icon ri-${temp_class}-line`}></i></h1>
+                <h2>Feels like: {feelsLike}°C</h2>
                 <h3>{type}</h3><i id="weather-icon" className={`ri-${icon_class}-line`}></i>
-                <h4>Wind: {windSpeed} mph <i id="wind-icon" className="ri-windy-line"></i></h4>
-                <h5>{location}, {countryCode} <i id="map-icon" className="ri-map-pin-line"></i></h5>
+                <h4>{windSpeed} mph <i id="wind-icon" className="ri-windy-line"></i></h4>
+                <h5>{location}, {countryCode} <i id="map-icon" className="ri-map-pin-2-line"></i></h5>
             </div>
         )
 
