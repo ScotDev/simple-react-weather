@@ -3,8 +3,7 @@ import axios from 'axios';
 import './styles.min.css'
 
 import Content from './components/Content';
-// const secret = process.env.REACT_APP_SECRET;
-const secret = '2a6ae01e17df3c070d45fcd262b3d837';
+const secret = process.env.REACT_APP_SECRET;
 
 class App extends Component {
   state = { randomNumberTo2: '', randomNumberTo7: '', errorMsg: '', showClass: '', hideClass: 'hide', query: null, location: '', countryCode: '', temp: '', feelsLike: '', type: '', windSpeed: '', typeClassName: '' };
