@@ -12,12 +12,12 @@ $cubic-bezier-transition: 0.1s cubic-bezier(0.77, 0.2, 0.05, 1);
 * {
   box-sizing: border-box;
   font-size: 16px;
-  font-family: 'DM Sans', sans-serif;
   letter-spacing: 0.1rem;
 }
 
 body {
   overflow: hidden;
+  font-family: 'DM Sans', sans-serif;
 }
 
 h1,
