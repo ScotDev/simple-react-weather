@@ -18,7 +18,8 @@ export default function Search({ getData, refresh }) {
             setQuery(e.target.value)
             getData(query)
             setPrevQuery(query)
-            document.title = `theweather.xyz | ${query}`
+            let capitalisedDocTitle = query.charAt(0).toUpperCase() + query.slice(1)
+            document.title = `theweather.xyz | ${capitalisedDocTitle}`
             setQuery('')
         }
     }
