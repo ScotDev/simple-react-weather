@@ -5,7 +5,8 @@ import './styles.min.css';
 import Search from './components/Search';
 import Spinner from './components/Spinner';
 import Results from './components/Results';
-const secret = process.env.REACT_APP_SECRET;
+// const secret = process.env.REACT_APP_SECRET;
+const secret = '44e26a5cc7234b9d159eed050be1e6c6';
 
 const App = () => {
   const [reqError, setReqError] = useState(false);
@@ -20,6 +21,7 @@ const App = () => {
     console.log('OK response', res.status);
     setWeather({ location: res.data.name, countryCode: res.data.sys.country, temp: res.data.main.temp.toFixed(1), feelsLike: res.data.main.feels_like.toFixed(1), type: res.data.weather[0].main, typeClassName: res.data.weather[0].main.toLowerCase(), windSpeed: res.data.wind.speed.toFixed(1) });
     setLoading(false);
+    setShowResults(true);
     setShowResults(true)
   }
 
@@ -29,16 +31,19 @@ const App = () => {
     console.log('Failed request', error.response.status);
     setLoading(false)
     setShowResults(false)
-    setTimeout(() => setReqError(false), 5000)
+    setTimeout(() => setReqError(false), 3000);
   }
 
   const getData = async query => {
     try {
       setLoading(true);
+      setShowResults(false)
       const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${secret}&units=metric`);
-      outputRes(res);
+      // API response is too fast to show loading spinner on good connections, slowed output display by 1.5s for consistency
+      setTimeout(() => outputRes(res), 1500);
     } catch (error) {
-      handleResError(error);
+      // And slowed by 1s for errors
+      setTimeout(() => handleResError(error), 1000);
     }
   }
 
