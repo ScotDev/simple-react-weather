@@ -10,6 +10,7 @@ export default function Search({ getData }) {
         if (e.target.query.value.length < 1 | e.target.query.value.startsWith(' ')) {
             setInputError(true);
             setInputErrorMsg('Please enter a location')
+            setTimeout(() => setInputError(false), 5000)
         } else {
             setQuery(e.target.value)
             getData(query)
