@@ -5,8 +5,7 @@ import './styles.min.css';
 import Search from './components/Search';
 import Spinner from './components/Spinner';
 import Results from './components/Results';
-// const secret = process.env.REACT_APP_SECRET;
-const secret = '2a6ae01e17df3c070d45fcd262b3d837';
+const secret = process.env.REACT_APP_SECRET;
 
 const App = () => {
   const [reqError, setReqError] = useState(false);
