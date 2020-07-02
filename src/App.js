@@ -5,7 +5,8 @@ import './styles.min.css';
 import Search from './components/Search';
 import Spinner from './components/Spinner';
 import Results from './components/Results';
-const secret = process.env.REACT_APP_SECRET;
+// const secret = process.env.REACT_APP_SECRET;
+const secret = '200646fca1364597b7d843d81ebf6370';
 
 const App = () => {
   const [reqError, setReqError] = useState(false);
@@ -21,7 +22,6 @@ const App = () => {
     setWeather({ location: res.data.name, countryCode: res.data.sys.country, temp: res.data.main.temp.toFixed(1), feelsLike: res.data.main.feels_like.toFixed(1), type: res.data.weather[0].main, typeClassName: res.data.weather[0].main.toLowerCase(), windSpeed: res.data.wind.speed.toFixed(1) });
     setLoading(false);
     setShowResults(true);
-    setShowResults(true)
   }
 
   const handleResError = (error) => {
@@ -31,6 +31,13 @@ const App = () => {
     setLoading(false)
     setShowResults(false)
     setTimeout(() => setReqError(false), 3000);
+  }
+
+  const refresh = () => {
+    setLoading(true)
+    setTimeout(() => setLoading(false), 1500);
+    setShowResults(false);
+    setTimeout(() => setShowResults(true), 1500);
   }
 
   const getData = async query => {
@@ -50,7 +57,7 @@ const App = () => {
   return (
     <div className="App">
       <div className={"container weather-bg-default"}>
-        <Search getData={getData}></Search>
+        <Search getData={getData} refresh={refresh}></Search>
         {reqError && <div id="warning" className="warning">{reqErrorMsg}</div>}
         {loading && <Spinner></Spinner>}
         {showResults && <Results weather={weather}></Results>}
