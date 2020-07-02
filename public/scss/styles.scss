@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 @import '_backgrounds';
 
 $white: #fff;
 $dark-grey: #677587;
 $light-grey: #c9c9c9;
+$warning: #db0f26;
 $box-custom-shadow: rgba(0, 0, 0, 0.7);
 $light-transparent-bg: rgba(transparent, 0.2);
 $cubic-bezier-transition: 0.1s cubic-bezier(0.77, 0.2, 0.05, 1);
@@ -17,7 +18,7 @@ $cubic-bezier-transition: 0.1s cubic-bezier(0.77, 0.2, 0.05, 1);
 
 body {
   overflow: hidden;
-  font-family: 'DM Sans', sans-serif;
+  font-family: 'Raleway', sans-serif;
 }
 
 h1,
@@ -38,7 +39,7 @@ form {
   input {
     border-radius: 6px;
     font-family: inherit;
-    font-weight: bold;
+    font-weight: 700;
     outline: 0;
     border: 1px solid $white;
     color: $white;
@@ -80,7 +81,7 @@ form {
 .button {
   border-radius: 6px;
   font-family: inherit;
-  font-weight: bold;
+  font-weight: 700;
   outline: 0;
   border: 1px solid $white;
   background-color: transparent;
@@ -116,9 +117,13 @@ form {
 
 .warning {
   display: flex;
-  flex-direction: row;
-  margin: 0 0 0.5rem 0.5rem;
-  color: red;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  margin: 0.1rem 0 0.5rem 0.5rem;
+  color: $warning;
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
 .helper-bg {

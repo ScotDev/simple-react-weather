@@ -1,73 +1,63 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
-import './styles.min.css'
+import './styles.min.css';
 
-import Content from './components/Content';
-const secret = process.env.REACT_APP_SECRET;
+import Search from './components/Search';
+import Spinner from './components/Spinner';
+import Results from './components/Results';
+// const secret = process.env.REACT_APP_SECRET;
+const secret = '2a6ae01e17df3c070d45fcd262b3d837';
 
-class App extends Component {
-  state = { randomNumberTo2: '', randomNumberTo7: '', errorMsg: '', showClass: '', hideClass: 'hide', query: null, location: '', countryCode: '', temp: '', feelsLike: '', type: '', windSpeed: '', typeClassName: '' };
+const App = () => {
+  const [reqError, setReqError] = useState(false);
+  const [reqErrorMsg, setReqErrorMsg] = useState('');
+  const [weather, setWeather] = useState({});
+  const [showResults, setShowResults] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  getData = () => axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${this.state.query}&appid=${secret}&units=metric`).then(res => {
-    this.setState({ hideClass: null, location: res.data.name, temp: res.data.main.temp.toFixed(1), feelsLike: res.data.main.feels_like.toFixed(1), type: res.data.weather[0].main, windSpeed: res.data.wind.speed.toFixed(1), countryCode: res.data.sys.country, typeClassName: res.data.weather[0].main.toLowerCase() });
-  })
-    .catch((error) => {
-      if (error.response) {
-        this.showError();
-      }
-    });
+  setTimeout(() => setReqError(false), 5000)
 
-  showError = () => {
-    this.setState({ showClass: 'show' });
-    this.setState({ errorMsg: 'Location not found' })
-  };
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    if (e.target.query.value.length < 1 | e.target.query.value.startsWith(' ')) {
-      this.setState({ showClass: "show" });
-      this.setState({ errorMsg: 'Please enter a location' })
-    } else {
-      this.setState({ showClass: null });
-      this.getData();
-      document.title = `theweather.xyz | ${this.state.query}`
-    }
-  };
-
-  handleInputChange = e => this.setState({ [e.target.name]: e.target.value });
-
-  bgRandomiser = () => {
-    const randomNumberTo7 = Math.floor(Math.random() * 7);
-    const randomNumberTo2 = Math.floor(Math.random() * 2);
-    this.setState({ randomNumberTo7: randomNumberTo7 })
-    this.setState({ randomNumberTo2: randomNumberTo2 })
-  };
-
-  componentDidMount() {
-    this.bgRandomiser()
-  };
-
-  render() {
-
-    const { randomNumberTo7, randomNumberTo2, errorMsg, showClass, typeClassName, hideClass } = this.state;
-    return (
-      <div className="App">
-        <div className={`container bg default-bg-${randomNumberTo7} weather-bg-${typeClassName}-${randomNumberTo2}`}>
-          <form className={`${showClass}`} onSubmit={this.handleSubmit}>
-            <input type="text" inputMode="search" name="query" placeholder="Enter a location" value={this.state.value} onChange={this.handleInputChange}></input>
-            <div id="warning" className={`warning hide ${showClass}`}>{errorMsg}</div>
-            <button className="button">Search</button>
-          </form>
-          <div className={`${hideClass}`}>
-            <Content weather={this.state}></Content>
-          </div>
-          <div className="credits"><a href="https://github.com/ScotDev" rel="noopener noreferrer" target="_blank"
-          >Created by ScotDev <i className="ri-github-fill"></i></a></div>
-        </div>
-      </div>
-    );
+  const outputRes = (res) => {
+    setReqError(false);
+    setReqErrorMsg('');
+    console.log('OK response', res.status);
+    setWeather({ location: res.data.name, countryCode: res.data.sys.country, temp: res.data.main.temp.toFixed(1), feelsLike: res.data.main.feels_like.toFixed(1), type: res.data.weather[0].main, typeClassName: res.data.weather[0].main.toLowerCase(), windSpeed: res.data.wind.speed.toFixed(1) });
+    setLoading(false);
+    setShowResults(true)
   }
 
+  const handleResError = (error) => {
+    setReqError(true);
+    setReqErrorMsg('Location not found');
+    console.log('Failed request', error.response.status);
+    setLoading(false)
+    setShowResults(false)
+    setTimeout(() => setReqError(false), 5000)
+  }
+
+  const getData = async query => {
+    try {
+      setLoading(true);
+      const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${secret}&units=metric`);
+      outputRes(res);
+    } catch (error) {
+      handleResError(error);
+    }
+  }
+
+
+  return (
+    <div className="App">
+      <div className={"container weather-bg-default"}>
+        <Search getData={getData}></Search>
+        {reqError && <div id="warning" className="warning">{reqErrorMsg}</div>}
+        {loading && <Spinner></Spinner>}
+        {showResults && <Results weather={weather}></Results>}
+        <div className="credits"><a href="https://github.com/ScotDev" rel="noopener noreferrer" target="_blank"
+        >Created by ScotDev <i className="ri-github-fill"></i></a></div>
+      </div>
+    </div>
+  );
 }
 
 export default App;
