@@ -14,7 +14,7 @@ const App = () => {
   const [showResults, setShowResults] = useState(false);
   const [loading, setLoading] = useState(false);
 
-  setTimeout(() => setReqError(false), 5000)
+  setTimeout(() => setReqError(false), 3000)
 
   const outputRes = (res) => {
     setReqError(false);
