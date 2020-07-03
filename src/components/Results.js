@@ -52,7 +52,7 @@ export default function Results({ weather }) {
     }
 
     return (
-        <div className="helper-bg" >
+        <div className="results" >
             <h1>{temp}°C <i id="temp-icon" className={`ri-${temp_class}-line`}></i></h1>
             <h2>Feels like: {feelsLike}°C</h2>
             <h3>{type}</h3><i id="weather-icon" className={`ri-${icon_class}-line`}></i>

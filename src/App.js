@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './styles.min.css';
+// import WeatherState from './context/weather/weatherState';
 
 import Search from './components/Search';
 import Spinner from './components/Spinner';
 import Results from './components/Results';
-// const secret = process.env.REACT_APP_SECRET;
-const secret = '200646fca1364597b7d843d81ebf6370';
+
+import './styles.min.css';
+const secret = process.env.REACT_APP_SECRET;
+
 
 const App = () => {
   const [reqError, setReqError] = useState(false);
@@ -55,6 +57,7 @@ const App = () => {
 
 
   return (
+    // <WeatherState>
     <div className="App">
       <div className={"container weather-bg-default"}>
         <Search getData={getData} refresh={refresh}></Search>
@@ -65,6 +68,7 @@ const App = () => {
         >Created by ScotDev <i className="ri-github-fill"></i></a></div>
       </div>
     </div>
+    // </WeatherState>
   );
 }
 

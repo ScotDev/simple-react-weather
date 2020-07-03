@@ -5,9 +5,10 @@
 $white: #fff;
 $dark-grey: #677587;
 $light-grey: #c9c9c9;
-$warning: #db0f26;
+$warning: #c41024;
 $box-custom-shadow: rgba(0, 0, 0, 0.7);
 $light-transparent-bg: rgba(transparent, 0.2);
+$standard-scale: 1.015;
 $cubic-bezier-transition: 0.1s cubic-bezier(0.77, 0.2, 0.05, 1);
 
 * {
@@ -35,26 +36,38 @@ form {
   display: flex;
   flex-direction: column;
   width: 20vw;
+  border: 1px solid $white;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  padding: 1.5rem 1rem;
+  background-color: $light-transparent-bg;
+}
 
-  input {
-    border-radius: 6px;
-    font-family: inherit;
-    font-weight: 700;
-    outline: 0;
-    border: 1px solid $white;
-    color: $white;
-    background-color: transparent;
-    margin-bottom: 0.5rem;
-    padding: 8px;
-    transform: scale(1);
-    transition: transform $cubic-bezier-transition;
-  }
+input {
+  border-radius: 6px;
+  font-family: inherit;
+  font-weight: 700;
+  outline: 0;
+  border: 1px solid $white;
+  color: $white;
+  background-color: transparent;
+  margin-bottom: 0.5rem;
+  padding: 8px;
+  transform: scale(1);
+  transition: transform $cubic-bezier-transition;
+}
 
-  input:hover,
-  input:focus {
-    background-color: $light-transparent-bg;
-    transform: scale(1.02);
-  }
+input:hover,
+input:focus {
+  background-color: $light-transparent-bg;
+  transform: scale($standard-scale);
+  -webkit-transform: scale($standard-scale);
+  -moz-transform: scale($standard-scale);
+  -ms-transform: scale($standard-scale);
+  -o-transform: scale($standard-scale);
 }
 
 ::placeholder {
@@ -101,7 +114,11 @@ form {
   -webkit-box-shadow: 5px 5px 8px $box-custom-shadow;
   box-shadow: 5px 5px 8px $box-custom-shadow;
   cursor: pointer;
-  transform: scale(1.02);
+  transform: scale($standard-scale);
+  -webkit-transform: scale($standard-scale);
+  -moz-transform: scale($standard-scale);
+  -ms-transform: scale($standard-scale);
+  -o-transform: scale($standard-scale);
 }
 
 .container {
@@ -120,13 +137,13 @@ form {
   flex-direction: column;
   text-align: center;
   justify-content: center;
-  margin: 0.1rem 0 0.5rem 0.5rem;
+  margin: 0.3rem 0;
   color: $warning;
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
-.helper-bg {
+.results {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -164,7 +181,11 @@ form {
 .helper-bg:hover,
 .helper-bg:focus {
   background-color: $light-transparent-bg;
-  transform: scale(1.02);
+  transform: scale($standard-scale);
+  -webkit-transform: scale($standard-scale);
+  -moz-transform: scale($standard-scale);
+  -ms-transform: scale($standard-scale);
+  -o-transform: scale($standard-scale);
 }
 
 .credits {
