@@ -79,14 +79,12 @@ input:focus {
 
 :-ms-input-placeholder {
   /* Internet Explorer 10-11 */
-
   color: $white;
   font-weight: normal;
 }
 
 ::-ms-input-placeholder {
   /* Microsoft Edge */
-
   color: $white;
   font-weight: normal;
 }
@@ -232,11 +230,17 @@ input:focus {
   .results {
     width: 40vw;
   }
+  .warning {
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
 }
 
 @media only screen and (max-width: 600px) {
   form {
-    width: 70vw;
+    width: 80vw;
   }
   h1,
   h2,
@@ -247,16 +251,16 @@ input:focus {
   }
 
   .results {
-    padding: 0.1rem 0.5rem 0.1rem 0.5rem;
+    padding: 0.1rem 0.35rem;
     margin: 0.4rem;
-    width: 70vw;
+    width: 80vw;
 
     #temp-icon {
       font-size: 1.2rem;
     }
 
     #weather-icon {
-      font-size: 5rem;
+      font-size: 4rem;
     }
 
     #wind-icon {
@@ -281,7 +285,7 @@ input:focus {
     font-size: 0.9rem;
   }
   .results {
-    padding: 0.1rem 0.4rem 0.1rem 0.4rem;
+    padding: 0.1rem 0.3rem;
 
     #temp-icon {
       font-size: 1rem;
@@ -289,7 +293,7 @@ input:focus {
     }
 
     #weather-icon {
-      font-size: 4.5rem;
+      font-size: 3.5rem;
     }
 
     #wind-icon {
