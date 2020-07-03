@@ -58,6 +58,10 @@ input {
   padding: 8px;
   transform: scale(1);
   transition: transform $cubic-bezier-transition;
+  -webkit-transition: transform $cubic-bezier-transition;
+  -moz-transition: transform $cubic-bezier-transition;
+  -ms-transition: transform $cubic-bezier-transition;
+  -o-transition: transform $cubic-bezier-transition;
 }
 
 input:hover,
@@ -104,6 +108,10 @@ input:focus {
   box-shadow: 3px 3px 5px $box-custom-shadow;
   transform: scale(1);
   transition: transform $cubic-bezier-transition;
+  -webkit-transition: transform $cubic-bezier-transition;
+  -moz-transition: transform $cubic-bezier-transition;
+  -ms-transition: transform $cubic-bezier-transition;
+  -o-transition: transform $cubic-bezier-transition;
 }
 
 .button:hover {
@@ -155,6 +163,10 @@ input:focus {
   border: 1px solid $white;
   transform: scale(1);
   transition: transform $cubic-bezier-transition;
+  -webkit-transition: transform $cubic-bezier-transition;
+  -moz-transition: transform $cubic-bezier-transition;
+  -ms-transition: transform $cubic-bezier-transition;
+  -o-transition: transform $cubic-bezier-transition;
 
   #temp-icon {
     font-size: 1.8rem;
@@ -252,7 +264,7 @@ input:focus {
 
   .results {
     padding: 0.1rem 0.35rem;
-    margin: 0.4rem;
+    margin: 0.4rem 0 0 0;
     width: 80vw;
 
     #temp-icon {
@@ -273,6 +285,13 @@ input:focus {
   }
   .credits a {
     font-size: 0.8rem;
+  }
+}
+
+// Really small mobile screens hide credits
+@media only screen and (max-width: 420px) {
+  .credits {
+    display: none;
   }
 }
 
