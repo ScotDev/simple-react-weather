@@ -243,7 +243,7 @@ input:focus {
 }
 
 @media only screen and (max-width: 1450px) {
-  .search-form {
+  form {
     width: 25vw;
   }
   .results {
@@ -252,7 +252,7 @@ input:focus {
 }
 
 @media only screen and (max-width: 1250px) {
-  .search-form {
+  form {
     width: 40vw;
   }
   .results {
@@ -266,7 +266,7 @@ input:focus {
 }
 
 @media only screen and (max-width: 600px) {
-  .search-form {
+  form {
     width: 80vw;
   }
   h1,

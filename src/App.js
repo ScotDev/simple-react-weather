@@ -46,7 +46,7 @@ const App = () => {
       setBgLoading(false);
       setBgLoadingError(true);
       setShowSearch(true);
-      setBgLoadingErrorMsg('Loading background image failed (you can still search for the weather!)');
+      setBgLoadingErrorMsg('Background image could not be loaded (you can still search for the weather!)');
     }
 
   }
