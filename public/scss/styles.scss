@@ -2,6 +2,15 @@
 
 @import '_backgrounds';
 
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 $white: #fff;
 $dark-grey: #677587;
 $light-grey: #c9c9c9;
@@ -48,6 +57,8 @@ form {
   background-color: $light-transparent-bg;
   margin-top: 1rem;
   padding: 1.5rem;
+  animation: FadeIn 3s ease 0s;
+  -webkit-animation: FadeIn 3s ease 0s;
 }
 
 input {
