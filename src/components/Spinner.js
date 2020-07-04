@@ -5,7 +5,7 @@ import loadingGif from '../img/loading.svg';
 export default function Spinner() {
     return (
         <>
-            <img src={loadingGif} alt="loading"></img>
+            <img src={loadingGif} alt="loading" className="loading-spinner"></img>
         </>
     )
 }

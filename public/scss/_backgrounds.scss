@@ -7,101 +7,25 @@
   }
 }
 
-.weather-bg-default {
-  background-image: url('https://source.unsplash.com/random/1920x1080?nature');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.background-image {
   width: 100%;
   height: 100%;
-  animation: bgFadeIn 2s ease 2s 1 normal backwards;
-  -webkit-animation: bgFadeIn 2s ease 2s 1 normal backwards;
+  z-index: 0;
+  display: block;
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+  animation: bgFadeIn 3s ease 0s;
+  -webkit-animation: bgFadeIn 3s ease 0s;
 }
 
-.weather-bg-clear {
-  background-image: url('https://source.unsplash.com/random/1920x1080?sun');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100%;
-  animation: bgFadeIn 3s ease 1s 1 backwards;
-}
-.weather-bg-clouds {
-  background-image: url('https://source.unsplash.com/random/1920x1080?clouds');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100%;
-  animation: bgFadeIn 3s ease 1s 1 normal forwards;
-}
-.weather-bg-rain {
-  background-image: url('https://source.unsplash.com/random/1920x1080?rain');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100%;
-  animation: bgFadeIn 3s ease 1s;
-}
-
-// .weather-bg-drizzle-0 {
-//   background-image: url('./img/weather-bg/drizzle_min_0.jpg');
-// }
-// .weather-bg-drizzle-1 {
-//   background-image: url('./img/weather-bg/drizzle_min_1.jpg');
-// }
-// .weather-bg-drizzle-2 {
-//   background-image: url('./img/weather-bg/drizzle_min_2.jpg');
-// }
-
-// .weather-bg-thunderstorm-0 {
-//   background-image: url('./img/weather-bg/thunderstorm_min_0.jpg');
-// }
-// .weather-bg-thunderstorm-1 {
-//   background-image: url('./img/weather-bg/thunderstorm_min_1.jpg');
-// }
-// .weather-bg-thunderstorm-2 {
-//   background-image: url('./img/weather-bg/thunderstorm_min_2.jpg');
-// }
-
-// .weather-bg-snow-0 {
-//   background-image: url('./img/weather-bg/snow_min_0.jpg');
-// }
-// .weather-bg-snow-1 {
-//   background-image: url('./img/weather-bg/snow_min_1.jpg');
-// }
-// .weather-bg-snow-2 {
-//   background-image: url('./img/weather-bg/snow_min_2.jpg');
-// }
-
-// .weather-bg-mist-0 {
-//   background-image: url('./img/weather-bg/mist_min_0.jpg');
-// }
-// .weather-bg-mist-1 {
-//   background-image: url('./img/weather-bg/mist_min_1.jpg');
-// }
-// .weather-bg-mist-2 {
-//   background-image: url('./img/weather-bg/mist_min_2.jpg');
-// }
-
-// .weather-bg-fog-0 {
-//   background-image: url('./img/weather-bg/fog_min_0.jpg');
-// }
-// .weather-bg-fog-1 {
-//   background-image: url('./img/weather-bg/fog_min_1.jpg');
-// }
-// .weather-bg-fog-2 {
-//   background-image: url('./img/weather-bg/fog_min_2.jpg');
-// }
-
-// .weather-bg-haze-0 {
-//   background-image: url('./img/weather-bg/haze_min_0.jpg');
-// }
-// .weather-bg-haze-1 {
-//   background-image: url('./img/weather-bg/haze_min_1.jpg');
-// }
-// .weather-bg-haze-2 {
-//   background-image: url('./img/weather-bg/haze_min_2.jpg');
+// .weather-bg-default {
+//   // background-image: url('https://source.unsplash.com/random/1920x1080?nature');
+//   background-repeat: no-repeat;
+//   background-size: cover;
+//   background-position: center;
+//   width: 100%;
+//   height: 100%;
+//   animation: bgFadeIn 2s ease 2s 1 normal backwards;
+//   -webkit-animation: bgFadeIn 2s ease 2s 1 normal backwards;
 // }
