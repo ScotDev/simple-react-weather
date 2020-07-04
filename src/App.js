@@ -9,7 +9,7 @@ import Credits from './components/layout/Credits';
 
 import './styles.min.css';
 const secret = process.env.REACT_APP_SECRET;
-const REACT_PEXELS_API_KEY = process.env.REACT_PEXELS_API_KEY;
+const pexels_key = process.env.REACT_PEXELS_API_KEY;
 
 
 const App = () => {
@@ -31,7 +31,7 @@ const App = () => {
 
     try {
       setBgLoading(true);
-      const imageData = await axios.get(`https://api.pexels.com/v1/search?query=mountains&per_page=10`, { headers: { Authorization: REACT_PEXELS_API_KEY } })
+      const imageData = await axios.get(`https://api.pexels.com/v1/search?query=mountains&per_page=10`, { headers: { Authorization: pexels_key } })
       const randomImage = imageData.data.photos[randomNumber];
       setBackgroundImageSrc(randomImage.src.original)
       setPhotoUrl(randomImage.url)
