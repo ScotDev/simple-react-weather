@@ -3,7 +3,7 @@ import axios from 'axios';
 // import WeatherState from './context/weather/weatherState';
 
 import Search from './components/Search';
-import Spinner from './components/Spinner';
+import Spinner from './components/helpers/Spinner';
 import Results from './components/Results';
 import Credits from './components/layout/Credits';
 
@@ -30,7 +30,7 @@ const App = () => {
 
     try {
       setBgLoading(true);
-      const imageData = await axios.get(`https://api.pexels.com/v1/search?query=mountains&per_page=10`, {
+      const imageData = await axios.get(`https://api.pexels.com/v1/search?query=nature&per_page=10`, {
         headers: {
           'Authorization': pexelsKey
         }

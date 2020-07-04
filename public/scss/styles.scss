@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
 
 @import '_backgrounds';
+@import '_buttons';
 
 @keyframes FadeIn {
   0% {
@@ -48,7 +49,7 @@ form {
   display: flex;
   flex-direction: column;
   border: 1px solid $white;
-  width: 20vw;
+  width: 22vw;
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -109,40 +110,6 @@ input:focus {
   font-weight: normal;
 }
 
-.button {
-  border-radius: 6px;
-  font-family: inherit;
-  font-weight: 700;
-  outline: 0;
-  border: 1px solid $white;
-  background-color: transparent;
-  color: $white;
-  padding: 8px;
-  margin-bottom: 0.5rem;
-  -moz-box-shadow: 3px 3px 5px $box-custom-shadow;
-  -webkit-box-shadow: 3px 3px 5px $box-custom-shadow;
-  box-shadow: 3px 3px 5px $box-custom-shadow;
-  transform: scale(1);
-  transition: transform $cubic-bezier-transition;
-  -webkit-transition: transform $cubic-bezier-transition;
-  -moz-transition: transform $cubic-bezier-transition;
-  -ms-transition: transform $cubic-bezier-transition;
-  -o-transition: transform $cubic-bezier-transition;
-}
-
-.button:hover {
-  background-color: $light-transparent-bg;
-  -moz-box-shadow: 5px 5px 8px $box-custom-shadow;
-  -webkit-box-shadow: 5px 5px 8px $box-custom-shadow;
-  box-shadow: 5px 5px 8px $box-custom-shadow;
-  cursor: pointer;
-  transform: scale($standard-scale);
-  -webkit-transform: scale($standard-scale);
-  -moz-transform: scale($standard-scale);
-  -ms-transform: scale($standard-scale);
-  -o-transform: scale($standard-scale);
-}
-
 .container {
   min-height: 100vh;
   min-width: 100vw;
@@ -184,7 +151,7 @@ input:focus {
   padding: 0.1rem 0.5rem;
   margin: 1rem;
   border-radius: 6px;
-  width: 20vw;
+  width: 22vw;
   border: 1px solid $white;
   transform: scale(1);
   transition: transform $cubic-bezier-transition;
@@ -232,14 +199,6 @@ input:focus {
   a:hover {
     border-bottom: 2px $white solid;
   }
-}
-
-.hide {
-  display: none;
-}
-
-.show {
-  display: flex !important;
 }
 
 @media only screen and (max-width: 1450px) {

@@ -1,0 +1,39 @@
+.button {
+  border-radius: 6px;
+  font-family: inherit;
+  font-weight: 700;
+  outline: 0;
+  border: 1px solid $white;
+  background-color: transparent;
+  color: $white;
+  padding: 8px;
+  margin-bottom: 0.5rem;
+  -moz-box-shadow: 3px 3px 5px $box-custom-shadow;
+  -webkit-box-shadow: 3px 3px 5px $box-custom-shadow;
+  box-shadow: 3px 3px 5px $box-custom-shadow;
+  transform: scale(1);
+  transition: transform $cubic-bezier-transition;
+  -webkit-transition: transform $cubic-bezier-transition;
+  -moz-transition: transform $cubic-bezier-transition;
+  -ms-transition: transform $cubic-bezier-transition;
+  -o-transition: transform $cubic-bezier-transition;
+}
+
+.button:hover {
+  background-color: $light-transparent-bg;
+  -moz-box-shadow: 5px 5px 8px $box-custom-shadow;
+  -webkit-box-shadow: 5px 5px 8px $box-custom-shadow;
+  box-shadow: 5px 5px 8px $box-custom-shadow;
+  cursor: pointer;
+  transform: scale($standard-scale);
+  -webkit-transform: scale($standard-scale);
+  -moz-transform: scale($standard-scale);
+  -ms-transform: scale($standard-scale);
+  -o-transform: scale($standard-scale);
+}
+
+@media only screen and (max-height: 570px) {
+  .button {
+    font-size: 0.9rem;
+  }
+}
