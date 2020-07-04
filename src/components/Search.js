@@ -29,11 +29,12 @@ export default function Search({ getData, refresh }) {
         setInputErrorMsg('')
     }
 
-    return (
+    return (<>
         <form onSubmit={handleSubmit}>
             <input type="text" inputMode="search" name="query" placeholder="Enter a location" onChange={handleInputChange} value={query}></input>
             <button className="button">Search</button>
-            {inputError && <div className="warning">{inputErrorMsg}</div>}
         </form>
+        {inputError && <div className="warning">{inputErrorMsg}</div>}
+    </>
     )
 }

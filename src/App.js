@@ -96,7 +96,6 @@ const App = () => {
   }
 
 
-
   return (
     // <WeatherState>
     <div className="App">
@@ -104,9 +103,8 @@ const App = () => {
       <div className={"container"}>
         {bgLoading && <Spinner></Spinner>}
         {bgLoadingError && <p className="bg-warning">{bgLoadingErrorMsg}</p>}
-        <div className="search-form">{showSearch ? <Search getData={getData} refresh={refresh}></Search> : null}
-          {reqError && <div className="warning">{reqErrorMsg}</div>}
-        </div>
+        {showSearch && <Search getData={getData} refresh={refresh}></Search>}
+        {reqError && <div className="warning">{reqErrorMsg}</div>}
         {loading && <Spinner></Spinner>}
         {showResults && <Results weather={weather}></Results>}
         {bgLoading ? null : <Credits photoUrl={photoUrl}></Credits>}
@@ -114,6 +112,9 @@ const App = () => {
     </div>
     // </WeatherState>
   );
+
+
+
 }
 
 export default App;

@@ -36,22 +36,8 @@ h5 {
 
 form {
   z-index: 1;
-  margin-top: 1rem;
-  background-color: transparent;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
-  // align-items: center;
-  width: 95%;
-  padding: 0;
-}
-
-.search-form {
-  @extend form;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   border: 1px solid $white;
   width: 20vw;
   border-radius: 6px;
@@ -60,8 +46,8 @@ form {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
   background-color: $light-transparent-bg;
-  margin-top: 0;
-  padding: 0.5rem 1rem 1.5rem 1rem;
+  margin-top: 1rem;
+  padding: 1.5rem;
 }
 
 input {
