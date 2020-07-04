@@ -45,6 +45,7 @@ form {
 }
 
 .search-form {
+  @extend form;
   border: 1px solid $white;
   border-radius: 6px;
   -webkit-border-radius: 6px;
@@ -52,6 +53,7 @@ form {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
   background-color: $light-transparent-bg;
+  margin-top: 0;
   padding: 0.5rem 1rem 1.5rem 1rem;
 }
 
