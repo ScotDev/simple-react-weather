@@ -9,7 +9,7 @@ import Credits from './components/layout/Credits';
 
 import './styles.min.css';
 const secret = process.env.REACT_APP_SECRET;
-const pexelsKey = process.env.REACT_API_KEY;
+const pexelsKey = process.env.REACT_APP_API_KEY;
 
 const App = () => {
   const [reqError, setReqError] = useState(false);
