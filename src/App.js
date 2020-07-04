@@ -12,6 +12,7 @@ const secret = process.env.REACT_APP_SECRET;
 const pexels_key = process.env.REACT_PEXELS_API_KEY;
 
 
+
 const App = () => {
   const [reqError, setReqError] = useState(false);
   const [reqErrorMsg, setReqErrorMsg] = useState('');
@@ -32,7 +33,7 @@ const App = () => {
     try {
       setBgLoading(true);
       const options = {
-        headers: { 'Authorization': pexels_key }
+        headers: { Authorization: pexels_key }
       }
       const imageData = await axios.get(`https://api.pexels.com/v1/search?query=mountains&per_page=10`, options)
       const randomImage = imageData.data.photos[randomNumber];

@@ -40,13 +40,20 @@ form {
   background-color: transparent;
   display: flex;
   flex-direction: column;
-  width: 20vw;
+  // justify-content: center;
+  // align-items: center;
+  width: 95%;
   padding: 0;
 }
 
 .search-form {
   @extend form;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 1px solid $white;
+  width: 20vw;
   border-radius: 6px;
   -webkit-border-radius: 6px;
   -moz-border-radius: 6px;
@@ -58,6 +65,7 @@ form {
 }
 
 input {
+  width: 100%;
   border-radius: 6px;
   font-family: inherit;
   font-weight: 700;
@@ -147,7 +155,7 @@ input:focus {
   align-items: center;
   background-color: $dark-grey;
   color: $white;
-  padding: 0 0.1rem;
+  padding: 0 1rem;
 }
 
 .warning {
@@ -237,7 +245,7 @@ input:focus {
 }
 
 @media only screen and (max-width: 1450px) {
-  form {
+  .search-form {
     width: 25vw;
   }
   .results {
@@ -246,7 +254,7 @@ input:focus {
 }
 
 @media only screen and (max-width: 1250px) {
-  form {
+  .search-form {
     width: 40vw;
   }
   .results {
@@ -260,7 +268,7 @@ input:focus {
 }
 
 @media only screen and (max-width: 600px) {
-  form {
+  .search-form {
     width: 80vw;
   }
   h1,
