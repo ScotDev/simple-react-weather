@@ -11,6 +11,7 @@ import './styles.min.css';
 const secret = process.env.REACT_APP_SECRET;
 const pexelsKey = process.env.REACT_APP_API_KEY;
 
+
 const App = () => {
   const [reqError, setReqError] = useState(false);
   const [reqErrorMsg, setReqErrorMsg] = useState('');
@@ -76,22 +77,22 @@ const App = () => {
 
   const refresh = () => {
     setLoading(true)
-    setTimeout(() => setLoading(false), 1500);
+    setTimeout(() => setLoading(false), 1000);
     setShowResults(false);
-    setTimeout(() => setShowResults(true), 1500);
+    setTimeout(() => setShowResults(true), 1000);
   }
 
-  const getData = async query => {
-    try {
-      setLoading(true);
-      setShowResults(false)
-      const res = await axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${secret}&units=metric`);
-      // API response is too fast to show loading spinner on good connections, slowed output display by 1.5s for consistency
-      setTimeout(() => outputRes(res), 1500);
-    } catch (error) {
-      // And slowed by 1s for errors
-      setTimeout(() => handleResError(error), 1000);
-    }
+  const getData = query => {
+    setLoading(true);
+    setShowResults(false)
+    axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${secret}&units=metric`)
+      .then(response => {
+        // API response is too fast to show loading spinner on good connections, slowed output display by 1s for consistency
+        setTimeout(() => outputRes(response), 1000);
+      }).catch(error => {
+        // And slowed by 1s for errors
+        setTimeout(() => handleResError(error), 1000);
+      })
   }
 
 
