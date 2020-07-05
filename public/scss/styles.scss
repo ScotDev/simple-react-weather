@@ -93,7 +93,7 @@ input:focus {
 }
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
   min-width: 100vw;
   display: flex;
   flex-direction: column;
@@ -101,7 +101,8 @@ input:focus {
   align-items: center;
   background-color: $dark-grey;
   color: $white;
-  padding: 0 1rem;
+  padding: 0 1rem 1rem 1rem;
+  overflow: hidden;
 }
 
 .warning {
@@ -165,6 +166,7 @@ input:focus {
 .credits {
   position: fixed;
   bottom: 1.1rem;
+  text-align: center;
   z-index: 1;
 
   a {
@@ -185,19 +187,19 @@ input:focus {
 
 @media only screen and (max-width: 1450px) {
   form {
-    width: 25vw;
+    width: 30vw;
   }
   .results {
-    width: 25vw;
+    width: 30vw;
   }
 }
 
 @media only screen and (max-width: 1250px) {
   form {
-    width: 40vw;
+    width: 55vw;
   }
   .results {
-    width: 40vw;
+    width: 55vw;
   }
   .warning {
     font-size: 1rem;
