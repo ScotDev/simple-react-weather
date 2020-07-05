@@ -24,31 +24,30 @@ const App = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [photoUrl, setPhotoUrl] = useState('https://www.pexels.com/');
 
-  const getBackgroundImage = async () => {
+  const getBackgroundImage = () => {
 
     const randomNumber = Math.floor(Math.random() * 9);
 
-    try {
-      setBgLoading(true);
-      const imageData = await axios.get(`https://api.pexels.com/v1/search?query=nature&per_page=10`, {
-        headers: {
-          'Authorization': pexelsKey
-        }
-      })
-      const randomImage = imageData.data.photos[randomNumber];
+    setBgLoading(true);
+    axios.get(`https://api.pexels.com/v1/search?query=nature&per_page=10`, {
+      headers: {
+        'Authorization': pexelsKey
+      }
+    }).then(response => {
+      const randomImage = response.data.photos[randomNumber];
       setBackgroundImageSrc(randomImage.src.original)
       setPhotoUrl(randomImage.url)
-      setTimeout(() => setBgLoading(false), 5000)
-      setTimeout(() => setShowSearch(true), 5000)
+      setBgLoading(false)
+      setShowSearch(true)
       setBgLoadingError(false)
       setBgLoadingErrorMsg('')
-    } catch (error) {
+    }).catch(error => {
+      console.log(error)
       setBgLoading(false);
       setBgLoadingError(true);
       setShowSearch(true);
       setBgLoadingErrorMsg('Background image could not be loaded (you can still search for the weather!)');
-    }
-
+    })
   }
 
   useEffect(() => {
