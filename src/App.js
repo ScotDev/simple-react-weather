@@ -27,10 +27,10 @@ const App = () => {
 
   const getBackgroundImage = () => {
 
-    const randomNumber = Math.floor(Math.random() * 9);
+    const randomNumber = Math.floor(Math.random() * 19);
 
     setBgLoading(true);
-    axios.get(`https://api.pexels.com/v1/search?query=nature&per_page=10`, {
+    axios.get(`https://api.pexels.com/v1/search?query=nature&per_page=20`, {
       headers: {
         'Authorization': pexelsKey
       }
