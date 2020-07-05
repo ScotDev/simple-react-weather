@@ -11,7 +11,6 @@ import './styles.min.css';
 const secret = process.env.REACT_APP_SECRET;
 const pexelsKey = process.env.REACT_APP_API_KEY;
 
-
 const App = () => {
   const [reqError, setReqError] = useState(false);
   const [reqErrorMsg, setReqErrorMsg] = useState('');
@@ -27,6 +26,9 @@ const App = () => {
 
   const getBackgroundImage = () => {
 
+    const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+    console.log(viewportWidth)
+
     const randomNumber = Math.floor(Math.random() * 19);
 
     setBgLoading(true);
@@ -36,7 +38,11 @@ const App = () => {
       }
     }).then(response => {
       const randomImage = response.data.photos[randomNumber];
-      setBackgroundImageSrc(randomImage.src.original)
+      if (viewportWidth > 700) {
+        setBackgroundImageSrc(randomImage.src.original)
+      } else {
+        setBackgroundImageSrc(randomImage.src.large2x)
+      }
       setPhotoUrl(randomImage.url)
       setBgLoading(false)
       setShowSearch(true)
