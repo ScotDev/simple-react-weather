@@ -38,7 +38,7 @@ form {
   -ms-border-radius: 6px;
   -o-border-radius: 6px;
   background-color: $light-transparent-bg;
-  margin-top: 1rem;
+  margin-top: 0;
   padding: 1.5rem 1.5rem 1rem 1.5rem;
   animation: FadeIn 3s ease 0s;
   -webkit-animation: FadeIn 3s ease 0s;
@@ -93,7 +93,7 @@ input:focus {
 }
 
 .container {
-  min-height: 100%;
+  height: 100vh;
   min-width: 100vw;
   display: flex;
   flex-direction: column;
