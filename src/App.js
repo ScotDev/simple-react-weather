@@ -6,6 +6,7 @@ import Search from './components/Search';
 import Spinner from './components/helpers/Spinner';
 import Results from './components/Results';
 import Credits from './components/layout/Credits';
+import Image from './components/Image';
 
 import './styles.min.css';
 const secret = process.env.REACT_APP_SECRET;
@@ -24,9 +25,9 @@ const App = () => {
   const [showSearch, setShowSearch] = useState(false);
   const [photoUrl, setPhotoUrl] = useState('https://www.pexels.com/');
 
-  const getBackgroundImage = () => {
+  const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
 
-    const viewportWidth = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
+  const getBackgroundImage = () => {
     const randomNumber = Math.floor(Math.random() * 19);
 
     setBgLoading(true);
@@ -36,11 +37,8 @@ const App = () => {
       }
     }).then(response => {
       const randomImage = response.data.photos[randomNumber];
-      if (viewportWidth > 700) {
-        setBackgroundImageSrc(randomImage.src.original)
-      } else {
-        setBackgroundImageSrc(randomImage.src.large2x)
-      }
+
+      setBackgroundImageSrc(randomImage.src)
       setPhotoUrl(randomImage.url)
       setBgLoading(false)
       setShowSearch(true)
@@ -99,11 +97,11 @@ const App = () => {
       })
   }
 
-
   return (
-    // <WeatherState>
     <div className="App">
-      {bgLoading | bgLoadingError ? null : <img src={backgroundImageSrc} alt="Background" className="background-image"></img>}
+      {/* {bgLoading | bgLoadingError ? null : <img src={backgroundImageSrc} alt="Background" className="background-image"></img>} */}
+
+      <Image alt="Scenic background" thumb={backgroundImageSrc.tiny} src={viewportWidth > 700 ? backgroundImageSrc.original : backgroundImageSrc.large2x}></Image>
       <div className={"container"}>
         {bgLoading && <Spinner></Spinner>}
         {bgLoadingError && <p className="bg-warning">{bgLoadingErrorMsg}</p>}
@@ -114,11 +112,11 @@ const App = () => {
         {bgLoading ? null : <Credits photoUrl={photoUrl}></Credits>}
       </div>
     </div>
-    // </WeatherState>
   );
 
 
 
 }
+
 
 export default App;
