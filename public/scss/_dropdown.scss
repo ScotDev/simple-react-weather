@@ -1,0 +1,30 @@
+.dropdown-container {
+  min-width: fit-content;
+  max-width: 5vw;
+  z-index: 5;
+  margin-bottom: 1rem;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+.dropdown-container ul {
+  border: 1px solid $white;
+  width: 100%;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  padding: 0;
+  margin: 0;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-container li {
+  color: $white;
+  padding: 0 0.5rem;
+  text-transform: uppercase;
+}
+
+.dropdown-container li:hover {
+  cursor: pointer;
+}

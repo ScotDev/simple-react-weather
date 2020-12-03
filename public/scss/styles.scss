@@ -2,6 +2,7 @@
 @import '_config';
 @import '_backgrounds';
 @import '_buttons';
+@import '_dropdown';
 
 * {
   box-sizing: border-box;
@@ -12,6 +13,8 @@
 body {
   overflow: hidden;
   font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .loading-spinner {
@@ -99,7 +102,7 @@ input:focus {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: $dark-grey;
+  background-color: $white;
   color: $white;
   padding: 0 1rem 1rem 1rem;
   overflow: hidden;

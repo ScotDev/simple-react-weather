@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 const Image = props => {
     const [isLoaded, setIsLoaded] = useState(false);
-
-    console.log(props)
     return (
         <>
             <img

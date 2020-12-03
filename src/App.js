@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import WeatherState from './context/weather/weatherState';
 
 import Search from './components/Search';
 import Spinner from './components/helpers/Spinner';
 import Results from './components/Results';
 import Credits from './components/layout/Credits';
 import Image from './components/Image';
+import LanguageSelector from './components/LanguageSelector';
 
 import './styles.min.css';
 const secret = process.env.REACT_APP_SECRET;
@@ -105,6 +105,7 @@ const App = () => {
       <div className={"container"}>
         {bgLoading && <Spinner></Spinner>}
         {bgLoadingError && <p className="bg-warning">{bgLoadingErrorMsg}</p>}
+        <LanguageSelector ></LanguageSelector>
         {showSearch && <Search getData={getData} refresh={refresh}></Search>}
         {reqError && <div className="warning">{reqErrorMsg}</div>}
         {loading && <Spinner></Spinner>}
