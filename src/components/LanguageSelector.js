@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { connect } from 'react-redux';
 
-// import languageVals from "./Translations";
-
 function Dropdown(props) {
     const [showMenu, setShowMenu] = useState(false);
 
@@ -21,9 +19,9 @@ function Dropdown(props) {
     //     // setUserLanguage(langShortCode);
     // };
 
-    useEffect(() => {
-        setShowMenu(false)
-    }, [props.langOptions]);
+    // useEffect(() => {
+    //     setShowMenu(false)
+    // }, [props.langOptions]);
 
     const changeUserLang = (e) => {
         setShowMenu(false);
@@ -94,7 +92,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = (dispatch) => {
     return {
         changeLanguage: (newLangSelection) => { dispatch({ type: "CHANGE_USER_LANG", payload: newLangSelection }) }
-        // updateSettings: (settingName, settingValue) => { dispatch({ type: "UPDATE_SETTING", payload: { settingName, settingValue } }) }
+
     }
 }
 

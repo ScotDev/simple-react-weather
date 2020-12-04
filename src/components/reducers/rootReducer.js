@@ -1,5 +1,8 @@
+import langVals from '../../Translations'
+
 const initialState = {
-    langOptions: ["en", "es", "de"]
+    langOptions: ["en", "es", "de"],
+    langVals: langVals.en
 }
 
 const rootReducer = (state = initialState, action) => {
@@ -11,7 +14,8 @@ const rootReducer = (state = initialState, action) => {
         copyOfLangOptions.unshift(action.payload);
         return {
             ...state,
-            langOptions: copyOfLangOptions
+            langOptions: copyOfLangOptions,
+            langVals: langVals[copyOfLangOptions[0]]
         }
     }
     return state;

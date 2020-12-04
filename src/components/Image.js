@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 
+
 const Image = props => {
+
     const [isLoaded, setIsLoaded] = useState(false);
+
     return (
         <>
             <img

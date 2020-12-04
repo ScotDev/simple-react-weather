@@ -1,8 +1,20 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-export default function Credits({ photoUrl }) {
+function Credits(props) {
+
     return (
         <div className="credits"><a href="https://github.com/ScotDev" rel="noopener noreferrer" target="_blank"
-        >Created by ScotDev <i className="ri-github-fill"></i></a><a href={photoUrl} rel="noopener noreferrer" target="_blank"> - Photos provided by Pexels</a></div>
+        >{props.langVals.credits.created} ScotDev <i className="ri-github-fill"></i></a><a href='https://www.pexels.com/' rel="noopener noreferrer" target="_blank"> - {props.langVals.credits.pexels} Pexels</a></div>
     )
 }
+
+
+const mapStateToProps = state => {
+    return {
+        langOptions: state.langOptions,
+        langVals: state.langVals
+    }
+}
+
+export default connect(mapStateToProps)(Credits);
