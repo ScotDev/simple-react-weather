@@ -20,7 +20,7 @@ const useAPI = (endpointURL, options) => {
             }
         };
         makeCall();
-    }, []);
+    }, [endpointURL]);
 
     return { data, error, isLoading };
 };
