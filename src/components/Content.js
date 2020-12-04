@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Spinner from './helpers/Spinner';
 import Image from './Image';
 import useAPI from '../hooks/useApi';
