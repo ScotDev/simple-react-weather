@@ -58,8 +58,8 @@ export default function Results(props) {
     }
     if (props.weatherData.cod !== "404" && props.weatherData) {
         return (<><div className="results" >
-            <h1>{data.main.temp.toString()}°C <i id="temp-icon" className={`ri-${temp_class}-line`}></i></h1>
-            <h2>{props.langVals.feelsLike}{data.main.feels_like.toString()}°C</h2>
+            <h1>{data.main.temp.toFixed(1).toString()}°C <i id="temp-icon" className={`ri-${temp_class}-line`}></i></h1>
+            <h2>{props.langVals.feelsLike.toFixed(1).toString()}{data.main.feels_like.toString()}°C</h2>
             <h3>{data.weather[0].description}</h3><i id="weather-icon" className={`ri-${icon_class}-line`}></i>
             <h4>{data.wind.speed.toString()} mph <i id="wind-icon" className="ri-windy-line"></i></h4>
             <h5>{data.name}, {data.sys.country} <i id="map-icon" className="ri-map-pin-2-line"></i></h5>
