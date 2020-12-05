@@ -1,9 +1,7 @@
 import React from 'react'
 
 export default function Results(props) {
-
     const data = props.weatherData;
-    console.log("Results props: ", props)
 
     // Sets weather icon class
     let icon_class;

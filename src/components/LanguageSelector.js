@@ -25,7 +25,6 @@ function Dropdown(props) {
 
     const changeUserLang = (e) => {
         setShowMenu(false);
-
         props.changeLanguage(e.target.id)
     };
 

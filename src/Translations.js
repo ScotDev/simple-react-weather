@@ -12,6 +12,10 @@ const languageVals = {
         },
         results: {
             feelsLike: "Feels like: ",
+        },
+        errors: {
+            notFound: "Location not found",
+            inputError: "Please enter a location"
         }
     },
     es: {
@@ -27,6 +31,10 @@ const languageVals = {
         },
         results: {
             feelsLike: "Sensación térmica: ",
+        },
+        errors: {
+            notFound: "Ubicación no encontrada",
+            inputError: "Introduzca una ubicación válida"
         }
     },
     de: {
@@ -42,6 +50,10 @@ const languageVals = {
         },
         results: {
             feelsLike: "Fühlt sich wie ",
+        },
+        errors: {
+            notFound: "Ort nicht gefunden",
+            inputError: "Bitte einen Standort eingeben"
         }
     }
 };

@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 const secret = process.env.REACT_APP_SECRET;
 
 function Search(props) {
-
     const [query, setQuery] = useState('');
     // const [prevQuery, setPrevQuery] = useState('');
     const [error, setError] = useState(false);
@@ -32,14 +31,14 @@ function Search(props) {
                 // Delayed to give user a chance to see loading state
                 setTimeout(() => {
                     setError(true)
-                    setErrorMsg("Location not found")
+                    setErrorMsg(props.langVals.errors.notFound)
                     setIsLoading(false);
                 }, 1000);
             }
         } catch (err) {
             // Handle request errors so they are visible to the user
             setError(true)
-            setErrorMsg("Location not found")
+            setErrorMsg(props.langVals.errors.notFound)
             setIsLoading(false);
             console.log("Error loading data from API: ", err)
         }
@@ -49,7 +48,7 @@ function Search(props) {
         e.preventDefault();
         if (e.target.query.value.length < 1 | e.target.query.value.startsWith(' ')) {
             setError(true);
-            setErrorMsg('Please enter a location')
+            setErrorMsg(props.langVals.errors.inputError)
         }
         // #1 - This was designed to cut down on unnecessary API calls.
         // A more programmatic approach would be better
