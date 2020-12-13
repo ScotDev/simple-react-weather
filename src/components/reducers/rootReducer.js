@@ -1,7 +1,7 @@
 import langVals from '../../Translations'
 
 const initialState = {
-    langOptions: ["en", "es", "de"],
+    langOptions: ["en", "es", "de", "pt"],
     langVals: langVals.en
 }
 
