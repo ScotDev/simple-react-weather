@@ -49,11 +49,30 @@ const languageVals = {
             buttonText: "Suchen"
         },
         results: {
-            feelsLike: "Fühlt sich wie ",
+            feelsLike: "Fühlt sich wie: ",
         },
         errors: {
             notFound: "Ort nicht gefunden",
             inputError: "Bitte einen Standort eingeben"
+        }
+    },
+    pt: {
+        OWM_API_shortcode: "pt",
+        welcome: "Olá",
+        credits: {
+            created: "Criado por",
+            pexels: "Fotos de"
+        },
+        search: {
+            placeholder: "Introduza uma localidade",
+            buttonText: "Pesquisar"
+        },
+        results: {
+            feelsLike: "Sensação térmica: ",
+        },
+        errors: {
+            notFound: "Localidade não encontrada",
+            inputError: "Por favor, introduza uma localidade"
         }
     }
 };
