@@ -21,7 +21,7 @@ html {
 body {
   overflow: hidden;
   background-color: $dark-grey;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Varela Round', sans-serif;
   margin: 0;
   padding: 0;
   height: 100vh;
@@ -44,7 +44,7 @@ body {
 
 .loading-spinner {
   z-index: 1;
-  margin-top: 35vh;
+  margin-top: 30vh;
 }
 
 h1,
@@ -84,29 +84,30 @@ input {
   background-color: transparent;
   margin-bottom: 0.7rem;
   padding: 8px;
-  transform: scale(1);
-  transition: transform $cubic-bezier-transition;
-  -webkit-transition: transform $cubic-bezier-transition;
-  -moz-transition: transform $cubic-bezier-transition;
-  -ms-transition: transform $cubic-bezier-transition;
-  -o-transition: transform $cubic-bezier-transition;
+  // transform: scale(1);
+  // transition: border $cubic-bezier-transition;
+  // -webkit-transition: border $cubic-bezier-transition;
+  // -moz-transition: border $cubic-bezier-transition;
+  // -ms-transition: border $cubic-bezier-transition;
+  // -o-transition: border $cubic-bezier-transition;
 }
 
 input:hover,
 input:focus {
   background-color: $light-transparent-bg;
-  transform: scale($standard-scale);
-  -webkit-transform: scale($standard-scale);
-  -moz-transform: scale($standard-scale);
-  -ms-transform: scale($standard-scale);
-  -o-transform: scale($standard-scale);
+  // border: 2px solid $white;
+  // transform: scale($standard-scale);
+  // -webkit-transform: scale($standard-scale);
+  // -moz-transform: scale($standard-scale);
+  // -ms-transform: scale($standard-scale);
+  // -o-transform: scale($standard-scale);
 }
 
 ::placeholder {
   /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: $white;
   opacity: 1; /* Firefox */
-  font-weight: normal;
+  font-weight: 400;
 }
 
 :-ms-input-placeholder {
@@ -224,7 +225,7 @@ input:focus {
 
 @media only screen and (max-width: 600px) {
   form {
-    width: 80vw;
+    width: 90vw;
   }
   h1,
   h2,
@@ -237,7 +238,7 @@ input:focus {
   .results {
     padding: 0.1rem 0.35rem;
     margin: 0.4rem 0 0 0;
-    width: 80vw;
+    width: 90vw;
 
     #temp-icon {
       font-size: 1.2rem;

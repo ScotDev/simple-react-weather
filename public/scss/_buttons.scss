@@ -11,12 +11,17 @@
   -moz-box-shadow: 3px 3px 5px $box-custom-shadow;
   -webkit-box-shadow: 3px 3px 5px $box-custom-shadow;
   box-shadow: 3px 3px 5px $box-custom-shadow;
-  transform: scale(1);
-  transition: transform $cubic-bezier-transition;
-  -webkit-transition: transform $cubic-bezier-transition;
-  -moz-transition: transform $cubic-bezier-transition;
-  -ms-transition: transform $cubic-bezier-transition;
-  -o-transition: transform $cubic-bezier-transition;
+  // transform: scale(1);
+  transition: transform 0.15s ease-in, background-color 0.15s ease-in,
+    box-shadow 0.15s ease-in;
+  -webkit-transition: transform 0.15s ease-in, background-color 0.15s ease-in,
+    box-shadow 0.15s ease-in;
+  -moz-transition: transform 0.15s ease-in, background-color 0.15s ease-in,
+    box-shadow 0.15s ease-in;
+  -ms-transition: transform 0.15s ease-in, background-color 0.15s ease-in,
+    box-shadow 0.15s ease-in;
+  -o-transition: transform 0.15s ease-in, background-color 0.15s ease-in,
+    box-shadow 0.15s ease-in;
 }
 
 .button:hover {
@@ -25,11 +30,11 @@
   -webkit-box-shadow: 5px 5px 8px $box-custom-shadow;
   box-shadow: 5px 5px 8px $box-custom-shadow;
   cursor: pointer;
-  transform: scale($standard-scale);
-  -webkit-transform: scale($standard-scale);
-  -moz-transform: scale($standard-scale);
-  -ms-transform: scale($standard-scale);
-  -o-transform: scale($standard-scale);
+  transform: translateY(-3px);
+  -webkit-transform: translateY(-3px);
+  -moz-transform: translateY(-3px);
+  -ms-transform: translateY(-3px);
+  -o-transform: translateY(-3px);
 }
 
 @media only screen and (max-height: 570px) {
