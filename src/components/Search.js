@@ -3,7 +3,8 @@ import Spinner from './helpers/Spinner';
 import Results from './Results';
 import { connect } from 'react-redux';
 
-const secret = process.env.REACT_APP_SECRET;
+// const secret = process.env.REACT_APP_SECRET;
+const secret = "0820dd774dcfa753a408d0cbf4850e7b";
 
 function Search(props) {
     const [query, setQuery] = useState('');
@@ -13,14 +14,19 @@ function Search(props) {
     const [weatherData, setWeatherData] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
 
-    const fetchData = async (query) => {
+    const fetchData = async (query, queryType) => {
         setIsLoading(true)
         setError(false)
 
         try {
-            const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${secret}&units=metric&lang=${props.langVals.OWM_API_shortcode}`)
+            let res;
+            if (queryType === "coords") {
+                res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${query.latitude}&lon=${query.longitude}&appid=${secret}&units=metric&lang=${props.langVals.OWM_API_shortcode}`)
+            } else {
+                res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${query}&appid=${secret}&units=metric&lang=${props.langVals.OWM_API_shortcode}`)
+            }
             const formattedRes = await res.json();
-            if (res.code !== "404") {
+            if (res.ok) {
                 setWeatherData(formattedRes)
             }
             // Loading icon flashes too quickly without a slight delay
@@ -73,9 +79,39 @@ function Search(props) {
         setErrorMsg('')
     }
 
+    const onLocationSuccess = (position) => {
+        fetchData(position.coords, "coords");
+    }
+
+    const onLocationFailure = () => {
+        setErrorMsg("Please allow geolocation to use this feature")
+        setError(true)
+        setTimeout(() => {
+            setError(false)
+            setErrorMsg("")
+        }, 5000);
+    }
+
+    const getUserLocation = () => {
+
+        if (window.navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(onLocationSuccess, onLocationFailure);
+        } else {
+            setErrorMsg("Geolocation may not be supported by your browser")
+            setError(true)
+            setTimeout(() => {
+                setError(false)
+                setErrorMsg("")
+            }, 4000);
+        }
+
+
+    }
+
     return (<>
         <form onSubmit={handleSubmit}>
             <input type="text" inputMode="search" name="query" placeholder={props.langVals.search.placeholder} onChange={handleInputChange} value={query}></input>
+            <i className="ri-navigation-line" onClick={getUserLocation}></i>
             <button className="button">{props.langVals.search.buttonText}</button>
         </form>
         {isLoading && <Spinner></Spinner>}
