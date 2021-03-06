@@ -20,6 +20,7 @@ const useAPI = (endpointURL, options) => {
             }
         };
         makeCall();
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     return { data, error, isLoading };
