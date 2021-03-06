@@ -3,8 +3,7 @@ import Spinner from './helpers/Spinner';
 import Results from './Results';
 import { connect } from 'react-redux';
 
-// const secret = process.env.REACT_APP_SECRET;
-const secret = "0820dd774dcfa753a408d0cbf4850e7b";
+const secret = process.env.REACT_APP_SECRET;
 
 function Search(props) {
     const [query, setQuery] = useState('');
