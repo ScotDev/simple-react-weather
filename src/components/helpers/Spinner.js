@@ -8,4 +8,4 @@ export default function Spinner() {
             <img src={loadingGif} alt="loading" className="loading-spinner"></img>
         </>
     )
-}
+};
