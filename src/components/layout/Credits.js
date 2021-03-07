@@ -9,7 +9,6 @@ function Credits(props) {
     )
 }
 
-
 const mapStateToProps = state => {
     return {
         langOptions: state.langOptions,
