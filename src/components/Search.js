@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import Spinner from './helpers/Spinner';
 import Results from './Results';
 import { connect } from 'react-redux';
